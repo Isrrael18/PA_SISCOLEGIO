@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema - Asignación de Cursos a Docentes</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="js/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="css/adminlte.css">
+  <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+
+    <!-- Navbar -->
+    <div th:replace="fragmentos :: menuSuperior"></div>
+    <div th:replace="fragmentos :: menuLateral"></div>
+
+    <div class="content-wrapper">
+      <div class="content-header">
+        <h1>Asignación de Cursos a Docentes</h1>
+      </div>
+
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="m-0">Asignar Docente a Curso</h5>
+                </div>
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="docente">Seleccione Docente</label>
+                    <select class="form-control" id="docente">
+                      <option value="" disabled selected>Seleccione un docente</option>
+                      <!-- Aquí se cargarán los docentes -->
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="curso">Seleccione Curso</label>
+                    <select class="form-control" id="curso">
+                      <option value="" disabled selected>Seleccione un curso</option>
+                      <!-- Aquí se cargarán los cursos -->
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <button class="btn btn-primary" id="asignar">Asignar Curso al Docente</button>
+                  </div>
+                  <div id="error-message" class="text-danger d-none"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Control Sidebar -->
+    <div th:replace="fragmentos :: copyRight"></div>
+    <div th:replace="fragmentos :: footer"></div>
+
+  </div>
+
+  <!-- REQUIRED SCRIPTS -->
+  <script src="js/plugins/jquery/jquery.min.js"></script>
+  <script src="js/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/adminlte.min.js"></script>
+  <script src="js/sweetalert2@11.js"></script>
+  <script src="js/scripts/cursosdocentes.js"></script>
+</body>
+
+</html>
